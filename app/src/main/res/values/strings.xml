@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Navigation</string>
+
+    <string name="master_fragment_1_title">Master Fragment 1</string>
+    <string name="master_fragment_2_title">Master Fragment 2</string>
+
+    <string name="detail_fragment_1_1_title">Detail Fragment 1.1</string>
+    <string name="detail_fragment_1_1_1_title">Detail Fragment 1.1.1</string>
+    <string name="detail_fragment_1_1_2_title">Detail Fragment 1.1.2</string>
+</resources>
