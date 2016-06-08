@@ -24,9 +24,9 @@
 
 package com.dieze.androiddemos.navigation;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -38,6 +38,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public class MainActivity extends AppCompatActivity {
+
     /**
      * Private ActionBar Toolbar instance.
      */
@@ -49,7 +50,11 @@ public class MainActivity extends AppCompatActivity {
     private Drawer mDrawer;
 
     /**
-     * {@inheritDoc}
+     * Called when the activity is first created.
+     *
+     * Always followed by onStart().
+     *
+     * @param savedInstanceState Data from onSaveInstanceState(Bundle) or null.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +101,14 @@ public class MainActivity extends AppCompatActivity {
                 // Toolbar required to use MaterialDrawer's ActionBarDrawerToggle
                 .withToolbar(getActionBarToolbar())
 
-                // add items to the navigation drawer
+                /**
+                 * add items to the navigation drawer
+                 *
+                 * Important note : as of MaterialDrawer version 5.3.0, the integer view id of a
+                 * DrawerItem is the value of its hashCode().
+                 *
+                 * @see <a href="https://github.com/mikepenz/MaterialDrawer/blob/v5.3.0/library/src/main/java/com/mikepenz/materialdrawer/model/BasePrimaryDrawerItem.java#L60">The Source</a>
+                 */
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.master_fragment_1_title),
                         new PrimaryDrawerItem().withName(R.string.master_fragment_2_title)
